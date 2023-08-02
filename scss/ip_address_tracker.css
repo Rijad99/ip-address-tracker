@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  font-family: "Rubik", sans-serif;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 280px calc(100vh - 280px);
+  grid-template-areas: "header" "map";
+}
+.layout-grid .header {
+  grid-area: header;
+  position: relative;
+  box-shadow: 0 5px 30px -2px rgba(43, 43, 43, 0.4);
+  z-index: 10000;
+}
+.layout-grid .header .header-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+.layout-grid .header .header-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.layout-grid .header .header-content .header-title {
+  margin: 2rem 0;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+}
+.layout-grid .header .header-content .search-control {
+  width: 500px;
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 12px;
+}
+.layout-grid .header .header-content .search-control .search-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: hsl(0, 0%, 17%);
+  border-radius: 12px;
+}
+.layout-grid .header .header-content .search-control .search-input::-moz-placeholder {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.layout-grid .header .header-content .search-control .search-input::placeholder {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.layout-grid .header .header-content .search-control .search-input {
+  border: none;
+  outline: none;
+}
+.layout-grid .header .header-content .ip-address-info {
+  min-height: 120px;
+  max-height: 400px;
+  height: 120px;
+  max-width: 1440px;
+  min-width: 500px;
+  display: flex;
+  position: absolute;
+  bottom: -60px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 15px;
+  padding: 2rem 0;
+  box-shadow: 0 5px 30px -2px rgba(43, 43, 43, 0.4);
+  z-index: 10000;
+  opacity: 0;
+}
+.layout-grid .header .header-content .ip-address-info .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem 0 2rem;
+}
+.layout-grid .header .header-content .ip-address-info .box:not(:last-child) {
+  border-right: 1px solid rgba(150, 150, 150, 0.35);
+}
+.layout-grid .header .header-content .ip-address-info .box h5 {
+  color: hsl(0, 0%, 59%);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.layout-grid .header .header-content .ip-address-info .box span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 17%);
+}
+.layout-grid .header .header-content .ip-address-info.show-ip-address-info {
+  opacity: 1;
+}
+.layout-grid .map {
+  grid-area: map;
+}
+
+.ripple {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.3rem solid hsl(232, 39%, 70%);
+  animation: 1s ripple ease-out infinite;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .layout-grid {
+    grid-template-rows: 375px calc(100vh - 375px);
+  }
+  .layout-grid .header .header-content .ip-address-info {
+    height: 330px;
+    flex-direction: column;
+    justify-content: center;
+    bottom: -165px !important;
+  }
+  .layout-grid .header .header-content .ip-address-info .box {
+    align-items: center;
+    text-align: center;
+  }
+  .layout-grid .header .header-content .ip-address-info .box:not(:last-child) {
+    border-right: unset !important;
+    padding-bottom: 1rem;
+  }
+  .layout-grid .header .header-content .ip-address-info .box h5 {
+    margin-bottom: 0.25rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header .header-content .ip-address-info {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header .header-content .search-control {
+    width: 400px !important;
+  }
+  .header .header-content .ip-address-info {
+    width: 400px !important;
+    min-width: 400px !important;
+  }
+}/*# sourceMappingURL=ip_address_tracker.css.map */

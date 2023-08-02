@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IP Address Tracker</title>
+
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="scss/ip_address_tracker.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+</head>
+
+<body>
+    
+    <div class="container layout-grid">
+        <!-- Header -->
+        <header class="header">
+            <img src="/images/pattern-bg-desktop.png" class="header-bg">
+            <div class="header-content" id="header-content">
+                <h1 class="header-title">IP Address Tracker</h1>
+                <div class="search-control">
+                    <input type="text" class="search-input" id="search-input" placeholder="Search for any IP Address or domain" spellcheck="false" autocomplete="off">
+                </div>
+                <div class="ip-address-info" id="ip-address-info">
+                    <div class="box">
+                        <h5></h5>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <h5></h5>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <h5></h5>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <h5></h5>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Map -->
+        <div id="map">
+
+        </div>
+    </div>
+    
+    <script src="js/http.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+    <script src="js/ip_address_tracker.js" type="module"></script>
+    <script src="js/map.js" type="module"></script>
+
+</body>
+</html>

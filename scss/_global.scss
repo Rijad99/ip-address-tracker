@@ -1,0 +1,15 @@
+//Font
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+//SCSS
+@import "./variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    font-family: $font, sans-serif;
+}
